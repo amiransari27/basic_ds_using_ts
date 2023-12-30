@@ -12,7 +12,8 @@ function isPowerOfTwo(n: number): boolean {
     return true
 }
 
-
+// if n is power of two
+// when we run a bit and operation between n&(n-1) it always return 0
 function isPowerOfTwoBitwise(n: number): boolean {
     if (n < 1){
         return false
