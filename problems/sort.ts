@@ -41,12 +41,29 @@
     }
     
 
+    function selectionSort(arr: number[]): number[]{
 
-const arr = [1,-6, 20, 12, 102, 8, -2, 4]
+        for (let j=0; j<arr.length; j++){
+            let small = j
+            for (let i=j; i< arr.length; i++){
+                
+                if (arr[small] > arr[i]){
+                    small = i
+                }
+            }
+            let temp = arr[j]
+            arr[j] = arr[small]
+            arr[small] = temp
+        }
+        
+        return arr
+    }
 
-console.log(bubbleSort(arr))
-console.log(bubbleSort([5,4,3,2,1]))
+
+console.log(bubbleSort([1,-6, 20, 12, 102, 8, -2, 4]))
 console.log("-------")
-console.log(bubbleSort2(arr))
+console.log(bubbleSort2([1,-6, 20, 12, 102, 8, -2, 4]))
+console.log("-------")
+console.log(selectionSort([1,-6, 20, 12, 102, 8, -2, 4]))
 
 }
