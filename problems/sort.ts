@@ -59,11 +59,30 @@
         return arr
     }
 
+    function insertionSort(arr: number[]): number[]{
+
+        for (let i=1; i<arr.length; i++){
+            let j = i
+            while(j > 0) {
+                if (arr[j] < arr[j-1]){
+                    let tmp = arr[j-1]
+                    arr[j-1] = arr[j]
+                    arr[j] = tmp
+                    j--
+                }else{
+                    break
+                }   
+            }
+        }
+        return arr
+    }
 
 console.log(bubbleSort([1,-6, 20, 12, 102, 8, -2, 4]))
 console.log("-------")
 console.log(bubbleSort2([1,-6, 20, 12, 102, 8, -2, 4]))
 console.log("-------")
-console.log(selectionSort([1,-6, 20, 12, 102, 8, -2, 4]))
+console.log(selectionSort([1,-6, 20, 8, -2, 4]))
+console.log("-------")
+console.log(insertionSort([1,-6, 20, 8, -2, 4]))
 
 }
