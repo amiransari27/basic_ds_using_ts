@@ -48,7 +48,46 @@
         
     };
 
+    function lengthOfLongestSubstringOptimized2(s: string): [number, string] {
+        
+        //"abcdcshldo"
+        let maxCount = 0
+        let maxStr = ""
+        let j: number = -1
+        const obj: { [s: string ]: boolean } = {}
+        let tmpStr: string = ""
+        for (let i = 0; i< s.length; i++){
+
+            if (!obj[s[i]]){
+                obj[s[i]] = true
+                tmpStr += `${s[i]}`
+            }else{
+                while(true){
+                    j++
+                    delete obj[s[j]]
+                    tmpStr = tmpStr.slice(1)
+                    if(s[j] === s[i]){
+                        i--
+                        break
+                    }
+                }
+                
+            }
+            let tmp = i - j
+            if (maxCount < tmp){
+                maxCount = tmp
+                maxStr = tmpStr
+
+            }
+            
+
+        }
+        
+        return [maxCount,maxStr]
+        
+    };
 
 
-    console.log(lengthOfLongestSubstringOptimized("abcdcshldo"))
+
+    console.log(lengthOfLongestSubstringOptimized2("acsahbabcd"))
 }
