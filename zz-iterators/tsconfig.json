@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "removeComments": false,
+      "outDir": "./",
+      "allowJs": true
+    },
+    "include": [
+      "**/*.ts",
+      "**/*.js"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.spec.ts",
+      "**/*.spec.js"
+    ]
+  }
